@@ -8,7 +8,7 @@ image:
   repository: aprazmo/exampleone
   pullPolicy: IfNotPresent
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "20240810104556"
+  tag: "20240815143119"
 
 imagePullSecrets: []
 nameOverride: ""
