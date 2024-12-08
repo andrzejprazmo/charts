@@ -42,8 +42,6 @@ securityContext: {}
 service:
   type: LoadBalancer
   port: 8080
-  externalIPs:
-    - 192.168.0.165
 
 ingress:
   enabled: true
@@ -52,9 +50,9 @@ ingress:
     # kubernetes.io/ingress.class: nginx
     # kubernetes.io/tls-acme: "true"
   hosts:
-    - host: kuberestapi.local
+    - host: dev.prazmo.pl
       paths:
-        - path: /
+        - path: /kuberest
           pathType: ImplementationSpecific
   tls: []
   #  - secretName: chart-example-tls
