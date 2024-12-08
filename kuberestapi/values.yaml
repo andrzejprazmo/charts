@@ -42,6 +42,8 @@ securityContext: {}
 service:
   type: LoadBalancer
   port: 8080
+  externalIPs:
+    - 192.168.0.165
 
 ingress:
   enabled: true
