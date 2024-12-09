@@ -40,7 +40,7 @@ securityContext: {}
   # runAsUser: 1000
 
 service:
-  type: LoadBalancer
+  type: ClusterIp
   port: 8080
 
 ingress:
@@ -52,6 +52,9 @@ ingress:
   hosts:
     - host: dev.prazmo.pl
       paths:
+        - backend:
+          serviceName: kuberestapi-svc
+          servicePort: 8080
         - path: /kuberestapi
           pathType: ImplementationSpecific
   tls: []
