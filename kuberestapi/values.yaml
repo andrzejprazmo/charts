@@ -55,8 +55,6 @@ ingress:
         - backend:
           serviceName: kuberestapi-svc
           servicePort: 8080
-        - path: /kuberestapi
-          pathType: ImplementationSpecific
   tls: []
   #  - secretName: chart-example-tls
   #    hosts:
