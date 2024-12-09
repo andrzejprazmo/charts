@@ -52,8 +52,8 @@ ingress:
   hosts:
     - host: dev.prazmo.pl
       paths:
-        - path: /kuberestapi
-          pathType: Exact
+        - path: /
+          pathType: ImplementationSpecific
   tls: []
   #  - secretName: chart-example-tls
   #    hosts:
