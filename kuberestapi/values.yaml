@@ -6,9 +6,9 @@ replicaCount: 2
 
 image:
   repository: andrzejprazmo/kuberestapi
-  pullPolicy: IfNotPresent
+  pullPolicy: Always
   # Overrides the image tag whose default is the chart appVersion.
-  tag: "20241209182543"
+  tag: "latest"
 
 imagePullSecrets: []
 nameOverride: ""
