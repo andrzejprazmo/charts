@@ -40,6 +40,22 @@ spec:
             - name: http
               containerPort: {{ .Values.service.port }}
               protocol: TCP
+          env:
+            - name: PSQL-DATABASE-HOST
+              valueFrom:
+                configMapKeyRef:
+                  name: postgres-address
+                  key: postgres-host
+            - name: PSQL-DATABASE-USER
+              valueFrom:
+                secretKeyRef:
+                  name: common-secrets
+                  key: postgres-user-name
+            - name: PSQL-DATABASE-PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: common-secrets
+                  key: postgres-user-password
           livenessProbe:
             {{- toYaml .Values.livenessProbe | nindent 12 }}
           readinessProbe:
