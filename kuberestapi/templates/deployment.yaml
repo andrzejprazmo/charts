@@ -48,14 +48,14 @@ spec:
                   key: postgres-host
             - name: PSQL-DATABASE-USER
               valueFrom:
-                configMapKeyRef:
-                  name: postgres-secret
-                  key: POSTGRES_USER
+                secretKeyRef:
+                  name: common-secrets
+                  key: postgres-user-name
             - name: PSQL-DATABASE-PASSWORD
               valueFrom:
-                configMapKeyRef:
-                  name: postgres-secret
-                  key: POSTGRES_PASSWORD
+                secretKeyRef:
+                  name: common-secrets
+                  key: postgres-user-password
           livenessProbe:
             {{- toYaml .Values.livenessProbe | nindent 12 }}
           readinessProbe:
