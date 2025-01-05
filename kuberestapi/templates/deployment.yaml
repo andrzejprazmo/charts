@@ -59,8 +59,8 @@ spec:
             - name: PSQL-DATABASE-PASSWORD
               valueFrom:
                 secretKeyRef:
-                  name: common-secrets
-                  key: postgres-user-password
+                  name: bgk-postgresql
+                  key: postgres-password
           livenessProbe:
             {{- toYaml .Values.livenessProbe | nindent 12 }}
           readinessProbe:
