@@ -46,6 +46,11 @@ spec:
                 configMapKeyRef:
                   name: postgres-address
                   key: postgres-host
+            - name: PSQL-DATABASE-PORT
+              valueFrom:
+                configMapKeyRef:
+                  name: postgres-address
+                  key: postgres-port
             - name: PSQL-DATABASE-USER
               valueFrom:
                 secretKeyRef:
