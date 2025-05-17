@@ -1,4 +1,4 @@
-# Default values for bgk.
+# Default values for bgk-admin.
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
@@ -71,7 +71,14 @@ resources: {}
   #   cpu: 100m
   #   memory: 128Mi
 
-
+livenessProbe:
+  httpGet:
+    path: /
+    port: http
+readinessProbe:
+  httpGet:
+    path: /
+    port: http
 
 autoscaling:
   enabled: false
