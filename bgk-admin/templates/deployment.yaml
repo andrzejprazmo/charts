@@ -64,7 +64,7 @@ spec:
                   key: postgres-password
             - name: BGK-JWT-SECRET
               valueFrom:
-                secretKeyRef:
+                configMapKeyRef:
                   name: bgk-configmap
                   key: jwt-secret
           livenessProbe:
