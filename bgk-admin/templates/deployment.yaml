@@ -62,6 +62,11 @@ spec:
                 secretKeyRef:
                   name: bgk-postgresql
                   key: postgres-password
+            - name: BGK-JWT-SECRET
+              valueFrom:
+                secretKeyRef:
+                  name: bgk-configmap
+                  key: jwt-secret
           livenessProbe:
             {{- toYaml .Values.livenessProbe | nindent 12 }}
           readinessProbe:
