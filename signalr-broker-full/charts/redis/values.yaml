@@ -1,7 +1,7 @@
 replicaCount: 1
 
 image:
-  repository: redis:latest
+  repository: redis
   pullPolicy: Always
   tag: "latest"
 
