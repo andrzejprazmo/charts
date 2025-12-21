@@ -13,3 +13,4 @@ spec:
       name: http
   selector:
     {{- include "signalr-broker.selectorLabels" . | nindent 4 }}
+  sessionAffinity: ClientIP
