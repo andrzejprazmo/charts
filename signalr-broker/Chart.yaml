@@ -4,4 +4,10 @@ description: A Helm chart for Kubernetes
 type: application
 version: 0.1.1
 appVersion: "1.16.0"
-
+dependencies:
+  - name: signalr-broker
+    version: 0.1.1
+    repository: "file://./charts/broker"
+  - name: signalr-redis
+    version: 0.1.1
+    repository: "file://./charts/redis"
