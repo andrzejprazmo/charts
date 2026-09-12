@@ -1,0 +1,7 @@
+Keycloak has been deployed.
+
+Get the service URL with:
+  kubectl port-forward svc/{{ include "keycloak.fullname" . }} 8080:8080
+
+Then open http://localhost:8080 and log in with the configured administrator
+credentials from values.yaml.
