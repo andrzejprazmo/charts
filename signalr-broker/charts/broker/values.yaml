@@ -28,11 +28,11 @@ ingress:
   enabled: true
   className: "nginx"
   annotations: 
-    nginx.ingress.kubernetes.io/affinity: "cookie"
-    nginx.ingress.kubernetes.io/session-cookie-name: "route"
-    nginx.ingress.kubernetes.io/session-cookie-expires: "3600"
-    nginx.ingress.kubernetes.io/session-cookie-max-age: "3600"
-    nginx.ingress.kubernetes.io/session-cookie-path: "/"
+     nginx.ingress.kubernetes.io/affinity: "cookie"
+     nginx.ingress.kubernetes.io/session-cookie-name: "route"
+     nginx.ingress.kubernetes.io/session-cookie-expires: "3600"
+     nginx.ingress.kubernetes.io/session-cookie-max-age: "3600"
+     nginx.ingress.kubernetes.io/session-cookie-path: "/"
 
   hosts:
     - host: signalr-broker.prazmo.pl
