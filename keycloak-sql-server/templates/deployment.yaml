@@ -44,9 +44,15 @@ spec:
               protocol: TCP
           env:
             - name: KC_BOOTSTRAP_ADMIN_USERNAME
-              value: "admin"
+              valueFrom:
+                secretKeyRef:
+                  name: keycloak-secret
+                  key: KEYCLOAK_ADMIN_NAME
             - name: KC_BOOTSTRAP_ADMIN_PASSWORD
-              value: "admin"
+              valueFrom:
+                secretKeyRef:
+                  name: keycloak-secret
+                  key: KEYCLOAK_ADMIN_PASSWORD
             - name: KC_PROXY_HEADERS
               value: "xforwarded"
             - name: KC_HTTP_ENABLED
@@ -72,12 +78,12 @@ spec:
             - name: 'KC_DB_PASSWORD'
               valueFrom:
                 secretKeyRef:
-                  name: mssql-secret
+                  name: keycloak-secret
                   key: KEYCLOAK_USER_PASSWORD
             - name: 'KC_DB_USERNAME'
               valueFrom:
                 secretKeyRef:
-                  name: mssql-secret
+                  name: keycloak-secret
                   key: KEYCLOAK_USER_NAME
           livenessProbe:
             {{- toYaml .Values.livenessProbe | nindent 12 }}
