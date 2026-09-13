@@ -1,0 +1,40 @@
+replicaCount: 2
+
+image:
+  repository: quay.io/keycloak/keycloak
+  tag: "26.7.3"
+  pullPolicy: IfNotPresent
+
+secretName: keycloak-secret
+
+service:
+  type: ClusterIP
+  port: 8080
+
+database:
+  name: keycloak
+  port: "1433"
+  host: mssql-service.sqlserver.svc.cluster.local
+  properties: ";encrypt=true;trustServerCertificate=true"
+  type: mssql
+  usernameKey: KEYCLOAK_USER_NAME
+  passwordKey: KEYCLOAK_USER_PASSWORD
+
+admin:
+  usernameKey: KEYCLOAK_ADMIN_NAME
+  passwordKey: KEYCLOAK_ADMIN_PASSWORD
+
+ingress:
+  enabled: true
+  className: nginx
+  host: keycloak.prazmo.pl
+  tls: true
+  tlsSecretName: ""
+
+resources:
+  limits:
+    cpu: 2000m
+    memory: 2000Mi
+  requests:
+    cpu: 500m
+    memory: 1700Mi
