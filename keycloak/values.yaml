@@ -29,7 +29,7 @@ ingress:
   className: nginx
   host: keycloak.prazmo.pl
   tls: true
-  tlsSecretName: ""
+  tlsSecretName: "keycloak-prazmo-tls"
 
 resources:
   limits:
